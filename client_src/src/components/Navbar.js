@@ -23,6 +23,8 @@ class Navbar extends Component {
             <i className = "fa fa-users"></i>Meetups</Link></li>
             <li><Link to="/about">
             <i className="fa fa-plus"></i>Add Meetups</Link></li>
+            <li> <Link to="/about">
+            <i className="fa fa-question-circle"></i>About</Link> </li>
           </ul>
         </div>
       </nav>
