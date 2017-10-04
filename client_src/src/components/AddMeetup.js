@@ -5,7 +5,15 @@ import axios from 'axios'
 class AddMeetup extends Component {
 
 addMeetup(newMeetup) {
-
+  axios.request({
+    method: 'post',
+    url:'http://localhost:3000/api/meetups',
+    data: newMeetup
+  })
+  .then(response => {
+    this.props.history.push('/');
+  })
+  .catch(err => console.log(err))
 }
 
     onSubmit(e) {
@@ -14,7 +22,7 @@ addMeetup(newMeetup) {
         city: this.refs.city.value,
         address: this.refs.address.value
       }
-      this.addMeetup(newMeetup)
+      this.addMeetup(newMeetup);
       e.preventDefault();
 
     }
@@ -39,6 +47,7 @@ addMeetup(newMeetup) {
               <input type="text" name="address" ref="address"/>
               <label htmlFor="city">Address</label>
             </div>
+            <input type="submit" value="Save" className="btn" />
           </form>
         </div>
       )
